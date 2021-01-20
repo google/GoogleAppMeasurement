@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 // limitations under the License.
 
 import PackageDescription
-
-let firebaseVersion = "7.3.1"
 
 let package = Package(
   name: "GoogleAppMeasurement",
@@ -34,26 +32,21 @@ let package = Package(
       url: "https://github.com/google/GoogleUtilities.git",
       "7.2.0" ..< "8.0.0"
     ),
+    .package(
+      name: "nanopb",
+      url: "https://github.com/firebase/nanopb.git",
+      "2.30907.0" ..< "2.30908.0"
+    ),
   ],
   targets: [
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
-        .target(name: "GoogleAppMeasurementWrapper
-      ],
-      path: "SwiftPM-PlatformExclude/GoogleAppMeasurementWrap"
-    ),
-
-    .target(
-      name: "GoogleAppMeasurement",
-      dependencies: [
-        .target(name: "GoogleAppMeasurementBinary", condition: .when(platforms: [.iOS])),
-        "FirebaseCore",
-        "FirebaseInstallations",
-        "GoogleUtilities_AppDelegateSwizzler",
-        "GoogleUtilities_MethodSwizzler",
-        "GoogleUtilities_NSData",
-        "GoogleUtilities_Network",
+        "GoogleAppMeasurement",
+        .product(name: "AppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "MethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "NSData", package: "GoogleUtilities"),
+        .product(name: "Network", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
       path: "GoogleAppMeasurementWrapper",
@@ -65,11 +58,10 @@ let package = Package(
       ]
     ),
     .binaryTarget(
-      name: "GoogleAppMeasurementBinary",
+      name: "GoogleAppMeasurement",
       url: "https://dl.google.com/firebase/ios/swiftpm/7.4.0/GoogleAppMeasurement.zip",
       checksum: "5c4e13589e8b5c357309dd8e5f57d81ab3e3ee5a731b034c4703e700d60d667a"
     ),
-
   ],
   cLanguageStandard: .c99,
   cxxLanguageStandard: CXXLanguageStandard.gnucxx14
