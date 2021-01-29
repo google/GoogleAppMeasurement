@@ -30,8 +30,7 @@ let package = Package(
     .package(
       name: "GoogleUtilities",
       url: "https://github.com/google/GoogleUtilities.git",
-      .exact("7.2.1-test")
-//      "7.2.0" ..< "8.0.0"
+      "7.2.1" ..< "8.0.0"
     ),
     .package(
       name: "nanopb",
