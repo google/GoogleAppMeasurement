@@ -30,7 +30,7 @@ let package = Package(
     .package(
       name: "GoogleUtilities",
       url: "https://github.com/google/GoogleUtilities.git",
-      "7.2.0" ..< "8.0.0"
+      "7.2.1" ..< "8.0.0"
     ),
     .package(
       name: "nanopb",
@@ -43,10 +43,10 @@ let package = Package(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
         "GoogleAppMeasurement",
-        .product(name: "AppDelegateSwizzler", package: "GoogleUtilities"),
-        .product(name: "MethodSwizzler", package: "GoogleUtilities"),
-        .product(name: "NSData", package: "GoogleUtilities"),
-        .product(name: "Network", package: "GoogleUtilities"),
+        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULNSData", package: "GoogleUtilities"),
+        .product(name: "GULNetwork", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
       path: "GoogleAppMeasurementWrapper",
