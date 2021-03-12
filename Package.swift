@@ -59,8 +59,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/7.8.0/GoogleAppMeasurement.zip",
-      checksum: "4852befb97d6d33a652f96276b3facc0f07d5028d1f0d2179a7cbc26aec2688e"
+      url: "https://dl.google.com/firebase/ios/swiftpm/7.8.1/GoogleAppMeasurement.zip",
+      checksum: "66932165046ea4134c0aeb9ad04bcee117b1f3ede707da33dd911e43e975c0a9"
     ),
   ],
   cLanguageStandard: .c99,
