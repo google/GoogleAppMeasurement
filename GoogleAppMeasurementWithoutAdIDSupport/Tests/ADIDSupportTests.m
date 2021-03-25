@@ -14,7 +14,7 @@
 
 
 #import <XCTest/XCTest.h>
-#import "GoogleAppMeasurementAdIDSupport/APMIdentifierSupport.h"
+#import "GoogleAppMeasurementWithoutAdIDSupport/APMDisabledIdentifierSupport.h"
 
 @interface GoogleAppMeasurementAdIDSupportTest : XCTestCase
 
@@ -23,7 +23,7 @@
 @implementation GoogleAppMeasurementAdIDSupportTest
 
 - (void)testAdConsentStatus {
-  XCTAssertEqual([APMIdentifierSupport adConsentStatus], 1);
+  XCTAssertEqual([APMDisabledIdentifierSupport adConsentStatus], 1);
 }
 
 @end

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#import "GoogleAppMeasurementWithoutAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/APMIdentifierSupport.h"
+#import "GoogleAppMeasurementWithoutAdIDSupport/Sources/Public/GoogleAppMeasurementWithoutAdIDSupport/APMDisabledIdentifierSupport.h"
 
-@implementation APMIdentifierSupport
+@implementation APMDisabledIdentifierSupport
 
 + (BOOL)hasAdConstentStatus {
 #ifdef BUILDFAIL

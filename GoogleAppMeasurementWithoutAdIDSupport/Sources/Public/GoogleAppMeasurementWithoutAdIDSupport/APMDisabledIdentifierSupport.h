@@ -20,7 +20,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APMIdentifierSupport : NSObject <APMIdentifierInterface>
+@interface APMDisabledIdentifierSupport : NSObject <APMIdentifierInterface>
 
 @end
 
