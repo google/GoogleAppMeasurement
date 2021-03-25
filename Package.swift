@@ -81,6 +81,14 @@ let package = Package(
         .headerSearchPath("../.."),
       ]
     ),
+    .testTarget(
+      name: "AdIDSupportTests",
+      dependencies: ["GoogleAppMeasurementAdIDSupport"],
+      path: "GoogleAppMeasurementAdIDSupport/Tests",
+      cSettings: [
+        .headerSearchPath("../.."),
+      ]
+    ),
 
 //    // MARK: - Ad ID Support
 //    .target(
