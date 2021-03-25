@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "GoogleAppMeasurementAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/APMIdentifierSupport.h"
+#import "GoogleAppMeasurementWithoutAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/APMIdentifierSupport.h"
 
 @implementation APMIdentifierSupport
 
