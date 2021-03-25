@@ -25,6 +25,14 @@ let package = Package(
       name: "GoogleAppMeasurement",
       targets: ["GoogleAppMeasurementTarget"]
     ),
+    .library(
+      name: "GoogleAppMeasurementAdIDSupport",
+      targets: ["GoogleAppMeasurementAdIDSupport"]
+    ),
+//    .library(
+//      name: "GoogleAppMeasurementNoAdIDSupport",
+//      targets: ["GoogleAppMeasurementNoAdIDSupport"]
+//    ),
   ],
   dependencies: [
     .package(
@@ -39,6 +47,7 @@ let package = Package(
     ),
   ],
   targets: [
+    // MARK: - AppMeasurement
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
@@ -62,6 +71,27 @@ let package = Package(
       url: "https://dl.google.com/firebase/ios/swiftpm/7.9.0/GoogleAppMeasurement.zip",
       checksum: "3cce0986d8da23a7eca1fbdff6170866dbe2be528da4a1605e598de342574f49"
     ),
+
+    // MARK: - Ad ID Support
+    .target(
+      name: "GoogleAppMeasurementAdIDSupport",
+      path: "GoogleAppMeasurementAdIDSupport/Sources",
+      publicHeadersPath: "Public",
+      cSettings: [
+        .headerSearchPath("../.."),
+      ]
+    ),
+
+//    // MARK: - Ad ID Support
+//    .target(
+//      name: "GoogleAppMeasurementNoAdIDSupport",
+//      dependencies: ["GoogleAppMeasurementAdIDSupport"],
+//      path: "GoogleAppMeasurementNoAdIDSupport/Sources",
+//      publicHeadersPath: "Public",
+//      cSettings: [
+//        .define("BUILDFAIL", to: "1")
+//      ]
+//    ),
   ],
   cLanguageStandard: .c99,
   cxxLanguageStandard: CXXLanguageStandard.gnucxx14
