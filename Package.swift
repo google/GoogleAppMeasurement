@@ -79,6 +79,7 @@ let package = Package(
       publicHeadersPath: "Public",
       cSettings: [
         .headerSearchPath("../../Protocols/"),
+        .headerSearchPath("../../"),
       ]
     ),
     .testTarget(
@@ -87,6 +88,7 @@ let package = Package(
       path: "GoogleAppMeasurementAdIDSupport/Tests",
       cSettings: [
         .headerSearchPath("../../Protocols"),
+        .headerSearchPath("../../"),
       ]
     ),
 
@@ -97,6 +99,7 @@ let package = Package(
       publicHeadersPath: "Public",
       cSettings: [
         .headerSearchPath("../../Protocols"),
+        .headerSearchPath("../../"),
       ]
     ),
     .testTarget(
@@ -105,6 +108,7 @@ let package = Package(
       path: "GoogleAppMeasurementWithoutAdIDSupport/Tests",
       cSettings: [
         .headerSearchPath("../../Protocols"),
+        .headerSearchPath("../../"),
       ]
     ),
 
