@@ -78,7 +78,7 @@ let package = Package(
       path: "GoogleAppMeasurementAdIDSupport/Sources",
       publicHeadersPath: "Public",
       cSettings: [
-        .headerSearchPath("../.."),
+        .headerSearchPath("../../Protocols/"),
       ]
     ),
     .testTarget(
@@ -86,7 +86,7 @@ let package = Package(
       dependencies: ["GoogleAppMeasurementAdIDSupport"],
       path: "GoogleAppMeasurementAdIDSupport/Tests",
       cSettings: [
-        .headerSearchPath("../.."),
+        .headerSearchPath("../../Protocols"),
       ]
     ),
 
@@ -96,7 +96,7 @@ let package = Package(
       path: "GoogleAppMeasurementWithoutAdIDSupport/Sources",
       publicHeadersPath: "Public",
       cSettings: [
-        .headerSearchPath("../.."),
+        .headerSearchPath("../../Protocols"),
       ]
     ),
     .testTarget(
@@ -104,7 +104,7 @@ let package = Package(
       dependencies: ["GoogleAppMeasurementWithoutAdIDSupport"],
       path: "GoogleAppMeasurementWithoutAdIDSupport/Tests",
       cSettings: [
-        .headerSearchPath("../.."),
+        .headerSearchPath("../../Protocols"),
       ]
     ),
 

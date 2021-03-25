@@ -20,16 +20,36 @@ TODO
   s.cocoapods_version = '>= 1.4.0'
   s.prefix_header_file = false
 
-# TODO: Add subspecs
+  s.default_subspec = 'AdID'
 
-  s.source_files = [
-    'GoogleAppMeasurementAdIDSupport/Sources/**/*.[m,h]',
-  ]
-  s.public_header_files = 'GoogleAppMeasurementAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/*.h'
-
-  s.pod_target_xcconfig = {
+  s.subspec 'AdID' do |ss|
+    ss.source_files = [
+      'GoogleAppMeasurementAdIDSupport/Sources/**/*.[mh]',
+      'Protocols/*.h',
+    ]
+    ss.public_header_files = [
+      'GoogleAppMeasurementAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/*.h',
+      'Protocols/*.h',
+    ]
+    ss.pod_target_xcconfig = {
     'GCC_C_LANGUAGE_STANDARD' => 'c99',
     'HEADER_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}"'
   }
+  end
+
+  s.subspec 'WithoutAdID' do |ss|
+    ss.source_files = [
+      'GoogleAppMeasurementWithoutAdIDSupport/Sources/**/*.[mh]',
+      'Protocols/*.h',
+    ]
+    ss.public_header_files = [
+      'GoogleAppMeasurementWithoutAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/*.h',
+      'Protocols/*.h',
+    ]
+    ss.pod_target_xcconfig = {
+    'GCC_C_LANGUAGE_STANDARD' => 'c99',
+    'HEADER_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}"'
+  }
+  end
 
 end

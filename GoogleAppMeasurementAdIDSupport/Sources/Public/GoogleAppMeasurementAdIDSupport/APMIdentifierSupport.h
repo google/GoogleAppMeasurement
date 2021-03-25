@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Protocols/APMIdentifierInterface.h"
+#import "APMIdentifierInterface.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
