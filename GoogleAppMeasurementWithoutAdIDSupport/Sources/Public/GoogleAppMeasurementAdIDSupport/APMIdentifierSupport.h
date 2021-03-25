@@ -16,19 +16,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Protocols/APMIdentifierInterface.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APMIdentifierSupport : NSObject
-
-+ (BOOL)hasAdConstentStatus;
-
-+ (NSUInteger)adConsentStatus;
-
-+ (BOOL)hasLimitedAdTracking;
-
-+ (BOOL)limitedAdTracking;
-
-+ (NSString *)resettableDeviceID;
+@interface APMIdentifierSupport : NSObject <APMIdentifierInterface>
 
 @end
 

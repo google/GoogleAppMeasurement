@@ -14,32 +14,22 @@
  * limitations under the License.
  */
 
-#import "GoogleAppMeasurementAdIDSupport/Sources/Public/GoogleAppMeasurementAdIDSupport/APMIdentifierSupport.h"
+#import <Foundation/Foundation.h>
 
-@implementation APMIdentifierSupport
+NS_ASSUME_NONNULL_BEGIN
 
-+ (BOOL)hasAdConstentStatus {
-#ifdef BUILDFAIL
-#error 1
-#else
-  return NO;
-#endif
-}
+@protocol APMIdentifierInterface
 
-+ (NSUInteger)adConsentStatus {
-  return 0;
-}
++ (BOOL)hasAdConstentStatus;
 
-+ (BOOL)hasLimitedAdTracking {
-  return NO;
-}
++ (NSUInteger)adConsentStatus;
 
-+ (BOOL)limitedAdTracking {
-  return YES;
-}
++ (BOOL)hasLimitedAdTracking;
 
-+ (NSString *)resettableDeviceID {
-  return @"";
-}
++ (BOOL)limitedAdTracking;
+
++ (NSString *)resettableDeviceID;
 
 @end
+
+NS_ASSUME_NONNULL_END

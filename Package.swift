@@ -90,6 +90,24 @@ let package = Package(
       ]
     ),
 
+    // MARK: - Without Ad ID Support
+    .target(
+      name: "GoogleAppMeasurementWithoutAdIDSupport",
+      path: "GoogleAppMeasurementWithoutAdIDSupport/Sources",
+      publicHeadersPath: "Public",
+      cSettings: [
+        .headerSearchPath("../.."),
+      ]
+    ),
+    .testTarget(
+      name: "WithoutAdIDSupportTests",
+      dependencies: ["GoogleAppMeasurementWithoutAdIDSupport"],
+      path: "GoogleAppMeasurementWithoutAdIDSupport/Tests",
+      cSettings: [
+        .headerSearchPath("../.."),
+      ]
+    ),
+
 //    // MARK: - Ad ID Support
 //    .target(
 //      name: "GoogleAppMeasurementNoAdIDSupport",
