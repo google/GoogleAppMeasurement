@@ -25,6 +25,10 @@ let package = Package(
       name: "GoogleAppMeasurement",
       targets: ["GoogleAppMeasurementTarget"]
     ),
+    .library(
+      name: "GoogleAppMeasurementWithoutAdIdSupport",
+      targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
+    ),
   ],
   dependencies: [
     .package(
@@ -61,6 +65,30 @@ let package = Package(
       name: "GoogleAppMeasurement",
       url: "https://dl.google.com/firebase/ios/swiftpm/7.9.0/GoogleAppMeasurement.zip",
       checksum: "3cce0986d8da23a7eca1fbdff6170866dbe2be528da4a1605e598de342574f49"
+    ),
+
+    .target(
+      name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
+      dependencies: [
+        "GoogleAppMeasurementWithoutAdIdSupport",
+        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULNSData", package: "GoogleUtilities"),
+        .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "nanopb", package: "nanopb"),
+      ],
+      path: "GoogleAppMeasurementWithoutAdIdSupport",
+      linkerSettings: [
+        .linkedLibrary("sqlite3"),
+        .linkedLibrary("c++"),
+        .linkedLibrary("z"),
+        .linkedFramework("StoreKit"),
+      ]
+    ),
+    .binaryTarget(
+      name: "GoogleAppMeasurementWithoutAdIdSupport",
+      url: "INSERT_URL",
+      checksum: "INSERT_CHECKSUM"
     ),
   ],
   cLanguageStandard: .c99,
