@@ -87,8 +87,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementWithoutAdIdSupport",
-      url: "INSERT_URL",
-      checksum: "INSERT_CHECKSUM"
+      url: "https://dl.google.com/firebase/ios/swiftpm/7.11.0/GoogleAppMeasurementWithoutAdIdSupport.zip",
+      checksum: "2a16076973dcf990d7475c10b6ba10ddd09f3cfdd0994db642556372584842f5"
     ),
   ],
   cLanguageStandard: .c99,
