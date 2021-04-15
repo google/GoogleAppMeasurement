@@ -77,7 +77,7 @@ let package = Package(
         .product(name: "GULNetwork", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
-      path: "GoogleAppMeasurementWithoutAdIdSupport",
+      path: "GoogleAppMeasurementWithoutAdIdSupportWrapper",
       linkerSettings: [
         .linkedLibrary("sqlite3"),
         .linkedLibrary("c++"),
