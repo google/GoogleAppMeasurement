@@ -25,6 +25,10 @@ let package = Package(
       name: "GoogleAppMeasurement",
       targets: ["GoogleAppMeasurementTarget"]
     ),
+    .library(
+      name: "GoogleAppMeasurementWithoutAdIdSupport",
+      targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
+    ),
   ],
   dependencies: [
     .package(
@@ -59,8 +63,32 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/7.9.0/GoogleAppMeasurement.zip",
-      checksum: "3cce0986d8da23a7eca1fbdff6170866dbe2be528da4a1605e598de342574f49"
+      url: "https://dl.google.com/firebase/ios/swiftpm/7.11.0/GoogleAppMeasurement.zip",
+      checksum: "c407ce4d122b430ef7890b65470694b8ad05bf368c43e438ad61e55dce1d4a6e"
+    ),
+
+    .target(
+      name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
+      dependencies: [
+        "GoogleAppMeasurementWithoutAdIdSupport",
+        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULNSData", package: "GoogleUtilities"),
+        .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "nanopb", package: "nanopb"),
+      ],
+      path: "GoogleAppMeasurementWithoutAdIdSupportWrapper",
+      linkerSettings: [
+        .linkedLibrary("sqlite3"),
+        .linkedLibrary("c++"),
+        .linkedLibrary("z"),
+        .linkedFramework("StoreKit"),
+      ]
+    ),
+    .binaryTarget(
+      name: "GoogleAppMeasurementWithoutAdIdSupport",
+      url: "https://dl.google.com/firebase/ios/swiftpm/7.11.0/GoogleAppMeasurementWithoutAdIdSupport.zip",
+      checksum: "2a16076973dcf990d7475c10b6ba10ddd09f3cfdd0994db642556372584842f5"
     ),
   ],
   cLanguageStandard: .c99,
