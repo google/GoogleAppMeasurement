@@ -63,8 +63,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.1.1/GoogleAppMeasurement.zip",
-      checksum: "8577fdb1bf32ac43875068a3d1e281b30ca2a56d6e8c2cd5a0bcf0b18e8e0735"
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.3.0/GoogleAppMeasurement.zip",
+      checksum: "1cd3a6b09b295804d85ca49397833753481e3e7608e9c0f2895e0c0fb0e58035"
     ),
 
     .target(
@@ -87,8 +87,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementWithoutAdIdSupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.1.1/GoogleAppMeasurementWithoutAdIdSupport.zip",
-      checksum: "1b861038ef771d53ca7bb6820f576de2ef6f12782ada2514a1c688802fc667db"
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.3.0/GoogleAppMeasurementWithoutAdIdSupport.zip",
+      checksum: "d61c583ee6e60f47eafedd4d508df4264da458faa7c97ca02146a6dd975892fc"
     ),
   ],
   cLanguageStandard: .c99,
