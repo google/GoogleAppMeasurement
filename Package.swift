@@ -46,7 +46,7 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
-	"AppMeasurementIdentitySupport",
+	"GoogleAppMeasurementIdentitySupport",
         "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
@@ -86,7 +86,7 @@ let package = Package(
       checksum: "e33658e67b60abf19bc3beb76232933c98bc8afb6ebf77ba80b49c86adeb4cab"
     ),
     .binaryTarget(
-      name: "AppMeasurementIdentitySupport",
+      name: "GoogleAppMeasurementIdentitySupport",
       url: "https://dl.google.com/firebase/ios/swiftpm/8.8.0/GoogleAppMeasurementIdentitySupport.zip",
       checksum: "930ee9da2174237f127880f9761244a55eaf702aefb48e0e86e078caab7bb7d5"
     ),
