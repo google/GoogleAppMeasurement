@@ -46,6 +46,7 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
+	"GoogleAppMeasurementIdentitySupport",
         "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
@@ -61,16 +62,10 @@ let package = Package(
         .linkedFramework("StoreKit"),
       ]
     ),
-    .binaryTarget(
-      name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.7.0/GoogleAppMeasurement.zip",
-      checksum: "f4b2894b83888eae0dba7848d6920cf67edd6836919d14b68540c46f4949e6f1"
-    ),
-
     .target(
       name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
       dependencies: [
-        "GoogleAppMeasurementWithoutAdIdSupport",
+        "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
@@ -86,9 +81,14 @@ let package = Package(
       ]
     ),
     .binaryTarget(
-      name: "GoogleAppMeasurementWithoutAdIdSupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.7.0/GoogleAppMeasurementWithoutAdIdSupport.zip",
-      checksum: "4bc45577a0b1b90f8b8b23fe93cf95ab594178a2eca07acb68ac51888b94f120"
+      name: "GoogleAppMeasurement",
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.8.0/GoogleAppMeasurement.zip",
+      checksum: "e33658e67b60abf19bc3beb76232933c98bc8afb6ebf77ba80b49c86adeb4cab"
+    ),
+    .binaryTarget(
+      name: "GoogleAppMeasurementIdentitySupport",
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.8.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "930ee9da2174237f127880f9761244a55eaf702aefb48e0e86e078caab7bb7d5"
     ),
   ],
   cLanguageStandard: .c99,
