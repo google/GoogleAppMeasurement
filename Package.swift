@@ -19,7 +19,7 @@ import PackageDescription
 
 let package = Package(
   name: "GoogleAppMeasurement",
-  platforms: [.iOS(.v10), .macOS(.v10_12), tvOS(.v12)],
+  platforms: [.iOS(.v10), .macOS(.v10_12), .tvOS(.v12)],
   products: [
     .library(
       name: "GoogleAppMeasurement",
