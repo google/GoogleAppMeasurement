@@ -19,7 +19,7 @@ import PackageDescription
 
 let package = Package(
   name: "GoogleAppMeasurement",
-  platforms: [.iOS(.v10), .macOS(.v10_12)],
+  platforms: [.iOS(.v10), .macOS(.v10_12), tvOS(.v12)],
   products: [
     .library(
       name: "GoogleAppMeasurement",
@@ -82,13 +82,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.8.0/GoogleAppMeasurement.zip",
-      checksum: "e33658e67b60abf19bc3beb76232933c98bc8afb6ebf77ba80b49c86adeb4cab"
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.9.0/GoogleAppMeasurement.zip",
+      checksum: "4bcd0437763100747017fce5096ef6993a9ed3b28d7453dab7650503df677a78"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.8.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "930ee9da2174237f127880f9761244a55eaf702aefb48e0e86e078caab7bb7d5"
+      url: "https://dl.google.com/firebase/ios/swiftpm/8.9.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "60b1a1613fff47d882ca27835833d5b245535ba979a819df8899ce88c17eed16"
     ),
   ],
   cLanguageStandard: .c99,
