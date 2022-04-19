@@ -29,6 +29,10 @@ let package = Package(
       name: "GoogleAppMeasurementWithoutAdIdSupport",
       targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
     ),
+    .library(
+      name: "GoogleAppMeasurementOnDeviceConversion",
+      targets: ["GoogleAppMeasurementOnDeviceConversionTarget"]
+    ),
   ],
   dependencies: [
     .package(
@@ -46,7 +50,7 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
-	"GoogleAppMeasurementIdentitySupport",
+        "GoogleAppMeasurementIdentitySupport",
         "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
@@ -80,15 +84,30 @@ let package = Package(
         .linkedFramework("StoreKit"),
       ]
     ),
+    .target(
+      name: "GoogleAppMeasurementOnDeviceConversionTarget",
+      dependencies: [
+        "GoogleAppMeasurementOnDeviceConversion",
+      ],
+      path: "GoogleAppMeasurementOnDeviceConversionWrapper",
+      linkerSettings: [
+        .linkedLibrary("c++"),
+      ]
+    ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.15.0/GoogleAppMeasurement.zip",
-      checksum: "8ea1b3090b09a0232e58be11d51fc326272616739c43caa407c452dbae0baba3"
+      url: "https://dl.google.com/firebase/ios/swiftpm/9.0.0/GoogleAppMeasurement.zip",
+      checksum: "e890a927da1cd04f55a09eb94976d6e0723b7158d474df0960cca1d9e41e6c55"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.15.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "b4f376139bd350be0a71bf56b1bb07e3263c31c8be1b105a7a6c471c23ba1a8c"
+      url: "https://dl.google.com/firebase/ios/swiftpm/9.0.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "f60e7e6b1bd2cdd7f44198058f67156b709ed735fb57d429b723108af64e87c2"
+    ),
+    .binaryTarget(
+      name: "GoogleAppMeasurementOnDeviceConversion",
+      url: "https://dl.google.com/firebase/ios/swiftpm/9.0.0/GoogleAppMeasurementOnDeviceConversion.zip",
+      checksum: "820bee44781aa17782b7460e201307535c3c398b692e6228bd382ce6500dce29"
     ),
   ],
   cLanguageStandard: .c99,
