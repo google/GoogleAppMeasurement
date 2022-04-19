@@ -19,3 +19,5 @@ jobs:
       run:  xcodebuild -sdk 'appletvsimulator' -destination 'platform=tvOS Simulator,name=Apple TV' -scheme GoogleAppMeasurement
     - name: Verify macOS build
       run:  xcodebuild -sdk 'macosx' -destination 'platform=macOS' -scheme GoogleAppMeasurement
+    - name: Verify GoogleAppMeasurementOnDeviceConversion iOS build
+      run:  xcodebuild -sdk 'iphonesimulator' -destination 'platform=iOS Simulator,name=iPhone 11' -scheme GoogleAppMeasurementOnDeviceConversion
