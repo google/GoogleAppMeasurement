@@ -96,13 +96,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/10.10.0/GoogleAppMeasurement.zip",
-      checksum: "91daa6e88b1cbdb169c219b58f783da3460ae657e2a56853f4a36818d4a42f7b"
+      url: "https://dl.google.com/firebase/ios/swiftpm/10.11.0/GoogleAppMeasurement.zip",
+      checksum: "7fb3b3215cd4bb8eedbcefcad235548723e50fed3f8bdef87376a3c1f9408c50"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/10.10.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "8851ae138ce79d8c6b63dfab5f1fd4e479eada1d4184c5bf59d819894267e45e"
+      url: "https://dl.google.com/firebase/ios/swiftpm/10.11.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "bb2d1e524e31aa5f83af1ce7c81d7e2ab157afd76882298356fbdda6d6fd3baf"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementOnDeviceConversion",
