@@ -75,7 +75,10 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
       dependencies: [
-        "GoogleAppMeasurement",
+        .target(
+          name: "GoogleAppMeasurement",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
@@ -93,7 +96,10 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementOnDeviceConversionTarget",
       dependencies: [
-        "GoogleAppMeasurementOnDeviceConversion",
+        .target(
+          name: "GoogleAppMeasurementOnDeviceConversion",
+          condition: .when(platforms: [.iOS])
+        ),
       ],
       path: "GoogleAppMeasurementOnDeviceConversionWrapper",
       linkerSettings: [
