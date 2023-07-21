@@ -19,7 +19,7 @@ import PackageDescription
 
 let package = Package(
   name: "GoogleAppMeasurement",
-  platforms: [.iOS(.v10), .macOS(.v10_12), .tvOS(.v12)],
+  platforms: [.iOS(.v10), .macOS(.v10_12), .tvOS(.v12), .watchOS(.v6)],
   products: [
     .library(
       name: "GoogleAppMeasurement",
@@ -50,8 +50,14 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
-        "GoogleAppMeasurementIdentitySupport",
-        "GoogleAppMeasurement",
+        .target(
+          name: "GoogleAppMeasurementIdentitySupport",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
+        .target(
+          name: "GoogleAppMeasurement",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
@@ -69,7 +75,10 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
       dependencies: [
-        "GoogleAppMeasurement",
+        .target(
+          name: "GoogleAppMeasurement",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
@@ -87,7 +96,10 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementOnDeviceConversionTarget",
       dependencies: [
-        "GoogleAppMeasurementOnDeviceConversion",
+        .target(
+          name: "GoogleAppMeasurementOnDeviceConversion",
+          condition: .when(platforms: [.iOS])
+        ),
       ],
       path: "GoogleAppMeasurementOnDeviceConversionWrapper",
       linkerSettings: [
