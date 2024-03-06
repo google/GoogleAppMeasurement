@@ -118,8 +118,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementOnDeviceConversion",
-      url: "https://dl.google.com/firebase/ios/swiftpm/10.22.0/GoogleAppMeasurementOnDeviceConversion-rc1.zip",
-      checksum: "96f66639d37cd2826df96b634b425e90f435bff0feccdafabfad670a4411194e"
+      url: "https://dl.google.com/firebase/ios/swiftpm/10.22.1/GoogleAppMeasurementOnDeviceConversion.zip",
+      checksum: "125d764c7fa04056e229ec85673f808087fcbbc26516c454a5badda677ef4dd7"
     ),
   ],
   cLanguageStandard: .c99,
