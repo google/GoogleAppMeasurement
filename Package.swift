@@ -108,18 +108,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.11.0/GoogleAppMeasurement.zip",
-      checksum: "06ac89b5b726ea08273e3372807de235e916609c4617aa577af36efd4e3d0765"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.12.0/GoogleAppMeasurement.zip",
+      checksum: "e7f5729355b5075f3704e61ca0dc72a191878008e898d046503d02cbb8bf23ad"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.11.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "d93f6e73ffdac24f5323cd4955bc6ca87001b877dbc6cd1739bf8107d965ec96"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.12.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "d6022af82b13d3adbdcd6f26b5da2017604230b0ee9d2614b2b331adc6082159"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementOnDeviceConversion",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.11.0/GoogleAppMeasurementOnDeviceConversion.zip",
-      checksum: "cf517cffef3860ace3d42d67302a9af81c163569686a75d0b2f01fcd709563d7"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.12.0/GoogleAppMeasurementOnDeviceConversion.zip",
+      checksum: "84442723886fa78451cb1fcd9ef51139c6f6ec5461608aaabf4b6b8db6fdee21"
     ),
   ],
   cLanguageStandard: .c99,
