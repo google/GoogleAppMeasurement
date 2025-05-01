@@ -26,9 +26,19 @@ let package = Package(
       targets: ["GoogleAppMeasurementTarget"]
     ),
     .library(
+      name: "GoogleAppMeasurementCore",
+      targets: ["GoogleAppMeasurementCoreTarget"]
+    ),
+    .library(
+      name: "GoogleAppMeasurementIdentitySupport",
+      targets: ["GoogleAppMeasurementIdentitySupportTarget"]
+    ),
+    // Deprecated. Use GoogleAppMeasurementCore instead.
+    .library(
       name: "GoogleAppMeasurementWithoutAdIdSupport",
       targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
     ),
+    // Deprecated. Use GoogleAdsOnDeviceConversion instead.
     .library(
       name: "GoogleAppMeasurementOnDeviceConversion",
       targets: ["GoogleAppMeasurementOnDeviceConversionTarget"]
@@ -45,10 +55,63 @@ let package = Package(
       url: "https://github.com/firebase/nanopb.git",
       "2.30910.0" ..< "2.30911.0"
     ),
+    .package(
+      name: "GoogleAdsOnDeviceConversion",
+      url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
+      "1.3.0" ..< "3.0.0"
+    ),
   ],
   targets: [
     .target(
       name: "GoogleAppMeasurementTarget",
+      dependencies: [
+        .target(
+          name: "GoogleAppMeasurementIdentitySupport",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
+        .target(
+          name: "GoogleAppMeasurement",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
+        
+        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULNSData", package: "GoogleUtilities"),
+        .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "nanopb", package: "nanopb"),
+        .product(name: "GoogleAdsOnDeviceConversion", package: "GoogleAdsOnDeviceConversion"),
+      ],
+      path: "GoogleAppMeasurementWrapper",
+      linkerSettings: [
+        .linkedLibrary("sqlite3"),
+        .linkedLibrary("c++"),
+        .linkedLibrary("z"),
+        .linkedFramework("StoreKit"),
+      ]
+    ),
+    .target(
+      name: "GoogleAppMeasurementCoreTarget",
+      dependencies: [
+        .target(
+          name: "GoogleAppMeasurement",
+          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
+        ),
+        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
+        .product(name: "GULNSData", package: "GoogleUtilities"),
+        .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "nanopb", package: "nanopb"),
+      ],
+      path: "GoogleAppMeasurementCoreWrapper",
+      linkerSettings: [
+        .linkedLibrary("sqlite3"),
+        .linkedLibrary("c++"),
+        .linkedLibrary("z"),
+        .linkedFramework("StoreKit"),
+      ]
+    ),
+    .target(
+      name: "GoogleAppMeasurementIdentitySupportTarget",
       dependencies: [
         .target(
           name: "GoogleAppMeasurementIdentitySupport",
@@ -64,7 +127,7 @@ let package = Package(
         .product(name: "GULNetwork", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
-      path: "GoogleAppMeasurementWrapper",
+      path: "GoogleAppMeasurementIdentitySupportWrapper",
       linkerSettings: [
         .linkedLibrary("sqlite3"),
         .linkedLibrary("c++"),
