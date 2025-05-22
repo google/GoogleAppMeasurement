@@ -16,4 +16,4 @@
 
 // Swift Package Manager needs at least one source file.
 
-#warning "GoogleAppMeasurementOnDeviceConversion is deprecated. Use GoogleAdsOnDeviceConversion instead."
+// #warning "GoogleAppMeasurementOnDeviceConversion is deprecated. Use GoogleAdsOnDeviceConversion instead."
