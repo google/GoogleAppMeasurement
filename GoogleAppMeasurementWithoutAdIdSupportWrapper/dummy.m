@@ -15,3 +15,5 @@
  */
 
 // Swift Package Manager needs at least one source file.
+
+#warning "GoogleAppMeasurementWithoutAdIdSupport is deprecated. Use GoogleAppMeasurementCore instead."
