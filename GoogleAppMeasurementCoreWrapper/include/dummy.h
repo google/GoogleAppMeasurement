@@ -14,6 +14,5 @@
  * limitations under the License.
  */
 
-// Swift Package Manager needs at least one source file.
-
-// #warning "GoogleAppMeasurementWithoutAdIdSupport is deprecated. Use GoogleAppMeasurementCore instead."
+// Swift Package Manager needs at least one header to prevent a warning. See
+// https://github.com/firebase/firebase-ios-sdk/pull/6504.
