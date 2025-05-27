@@ -38,7 +38,8 @@ let package = Package(
       name: "GoogleAppMeasurementWithoutAdIdSupport",
       targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
     ),
-    // Deprecated. Use GoogleAdsOnDeviceConversion instead.
+    // Deprecated. Use GoogleAdsOnDeviceConversion from
+    // https://github.com/googleads/google-ads-on-device-conversion-ios-sdk/ instead.
     .library(
       name: "GoogleAppMeasurementOnDeviceConversion",
       targets: ["GoogleAppMeasurementOnDeviceConversionTarget"]
@@ -48,7 +49,7 @@ let package = Package(
     .package(
       name: "GoogleUtilities",
       url: "https://github.com/google/GoogleUtilities.git",
-      "8.0.0" ..< "9.0.0"
+      "8.1.0" ..< "9.0.0"
     ),
     .package(
       name: "nanopb",
@@ -58,7 +59,7 @@ let package = Package(
     .package(
       name: "GoogleAdsOnDeviceConversion",
       url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
-      "1.3.0" ..< "3.0.0"
+      "2.0.0" ..< "3.0.0"
     ),
   ],
   targets: [
@@ -171,18 +172,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.13.0/GoogleAppMeasurement.zip",
-      checksum: "92be005e6021dec6cb862c6be559f02a172c12e303ac4a1fba8aafef40b5768c"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.14.0/GoogleAppMeasurement.zip",
+      checksum: "f8accf50ff3ccba22fa19b572aac348cf9d2b72f57261c02fa35a173efb6f960"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.13.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "e87a3ab081ff19658861c8cda4a633b1dd316f3acd608f54b35c986cf2b1cadf"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.14.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "d5367d077b9cdffd2ec05cc80224f04531b1ce469826ed6b9e84e0789bcd75c8"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementOnDeviceConversion",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.13.0/GoogleAppMeasurementOnDeviceConversion.zip",
-      checksum: "cdcf18e21f2a36e1d7dfcbe6b7b698e35c0acbf6b988e92b273580ccc35c7434"
+      url: "https://dl.google.com/firebase/ios/swiftpm/11.14.0/GoogleAppMeasurementOnDeviceConversion.zip",
+      checksum: "10550f6ec6098ecfb9bb685fcb6bdf5499807af05cfbecb21a7f31fa8f03824e"
     ),
   ],
   cLanguageStandard: .c99,
