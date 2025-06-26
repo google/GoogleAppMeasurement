@@ -1,6 +1,7 @@
 ---
-name: Bug report
-about: Do Not Use
+name: Not actively managed in this repo
+about: Use https://github.com/firebase/firebase-ios-sdk/issues with product `FirebaseAnalytics`
+  instead
 title: ''
 labels: ''
 assignees: ''
