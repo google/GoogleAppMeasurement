@@ -1,5 +1,5 @@
 ---
-name: Not actively managed in this repo
+name: Issues are not actively managed in this repo
 about: Use https://github.com/firebase/firebase-ios-sdk/issues with product `FirebaseAnalytics`
   instead
 title: ''
