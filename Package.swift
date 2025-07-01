@@ -135,7 +135,5 @@ let package = Package(
       url: "https://dl.google.com/firebase/ios/swiftpm/11.15.0/GoogleAppMeasurementIdentitySupport.zip",
       checksum: "b03de5d48cde12af3bc7ca1f9c6b45d97db7ef6f90501277aca10c7832b5e21b"
     ),
-  ],
-  cLanguageStandard: .c99,
-  cxxLanguageStandard: CXXLanguageStandard.gnucxx14
+  ]
 )
