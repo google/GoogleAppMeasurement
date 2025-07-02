@@ -33,17 +33,6 @@ let package = Package(
       name: "GoogleAppMeasurementIdentitySupport",
       targets: ["GoogleAppMeasurementIdentitySupportTarget"]
     ),
-    // Deprecated. Use GoogleAppMeasurementCore instead.
-    .library(
-      name: "GoogleAppMeasurementWithoutAdIdSupport",
-      targets: ["GoogleAppMeasurementWithoutAdIdSupportTarget"]
-    ),
-    // Deprecated. Use GoogleAdsOnDeviceConversion from
-    // https://github.com/googleads/google-ads-on-device-conversion-ios-sdk/ instead.
-    .library(
-      name: "GoogleAppMeasurementOnDeviceConversion",
-      targets: ["GoogleAppMeasurementOnDeviceConversionTarget"]
-    ),
   ],
   dependencies: [
     .package(
@@ -136,40 +125,6 @@ let package = Package(
         .linkedFramework("StoreKit"),
       ]
     ),
-    .target(
-      name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
-      dependencies: [
-        .target(
-          name: "GoogleAppMeasurement",
-          condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])
-        ),
-        .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
-        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
-        .product(name: "GULNSData", package: "GoogleUtilities"),
-        .product(name: "GULNetwork", package: "GoogleUtilities"),
-        .product(name: "nanopb", package: "nanopb"),
-      ],
-      path: "GoogleAppMeasurementWithoutAdIdSupportWrapper",
-      linkerSettings: [
-        .linkedLibrary("sqlite3"),
-        .linkedLibrary("c++"),
-        .linkedLibrary("z"),
-        .linkedFramework("StoreKit"),
-      ]
-    ),
-    .target(
-      name: "GoogleAppMeasurementOnDeviceConversionTarget",
-      dependencies: [
-        .target(
-          name: "GoogleAppMeasurementOnDeviceConversion",
-          condition: .when(platforms: [.iOS])
-        ),
-      ],
-      path: "GoogleAppMeasurementOnDeviceConversionWrapper",
-      linkerSettings: [
-        .linkedLibrary("c++"),
-      ]
-    ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
       url: "https://dl.google.com/firebase/ios/swiftpm/11.15.0/GoogleAppMeasurement.zip",
@@ -179,11 +134,6 @@ let package = Package(
       name: "GoogleAppMeasurementIdentitySupport",
       url: "https://dl.google.com/firebase/ios/swiftpm/11.15.0/GoogleAppMeasurementIdentitySupport.zip",
       checksum: "b03de5d48cde12af3bc7ca1f9c6b45d97db7ef6f90501277aca10c7832b5e21b"
-    ),
-    .binaryTarget(
-      name: "GoogleAppMeasurementOnDeviceConversion",
-      url: "https://dl.google.com/firebase/ios/swiftpm/11.15.0/GoogleAppMeasurementOnDeviceConversion.zip",
-      checksum: "e8e001c865b3c68c57f8aa1638fceba72c95f9331bc5b7db3cca04615f66cc56"
     ),
   ],
   cLanguageStandard: .c99,
