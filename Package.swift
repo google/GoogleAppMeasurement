@@ -35,18 +35,9 @@ let package = Package(
     ),
   ],
   dependencies: [
+    .package(url: "https://github.com/google/GoogleUtilities.git", "8.1.0" ..< "9.0.0"),
+    .package(url: "https://github.com/firebase/nanopb.git", "2.30910.0" ..< "2.30911.0"),
     .package(
-      name: "GoogleUtilities",
-      url: "https://github.com/google/GoogleUtilities.git",
-      "8.1.0" ..< "9.0.0"
-    ),
-    .package(
-      name: "nanopb",
-      url: "https://github.com/firebase/nanopb.git",
-      "2.30910.0" ..< "2.30911.0"
-    ),
-    .package(
-      name: "GoogleAdsOnDeviceConversion",
       url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
       "2.0.0" ..< "3.0.0"
     ),
@@ -69,7 +60,9 @@ let package = Package(
         .product(name: "GULNSData", package: "GoogleUtilities"),
         .product(name: "GULNetwork", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
-        .product(name: "GoogleAdsOnDeviceConversion", package: "GoogleAdsOnDeviceConversion"),
+        .product(
+          name: "GoogleAdsOnDeviceConversion", package: "google-ads-on-device-conversion-ios-sdk"
+        ),
       ],
       path: "GoogleAppMeasurementWrapper",
       linkerSettings: [
