@@ -48,7 +48,7 @@ let package = Package(
     .package(
       name: "GoogleAdsOnDeviceConversion",
       url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
-      "2.0.0" ..< "3.0.0"
+      exact: "2.1.0"
     ),
   ],
   targets: [
