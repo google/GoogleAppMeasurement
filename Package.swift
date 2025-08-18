@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 // Copyright 2021 Google LLC
@@ -79,7 +79,7 @@ let package = Package(
         .product(name: "GULNSData", package: "GoogleUtilities"),
         .product(name: "GULNetwork", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
-        .product(name: "GoogleAdsOnDeviceConversion", package: "GoogleAdsOnDeviceConversion"),
+        .product(name: "GoogleAdsOnDeviceConversion", package: "google-ads-on-device-conversion-ios-sdk"),
       ],
       path: "GoogleAppMeasurementWrapper",
       linkerSettings: [
