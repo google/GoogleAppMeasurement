@@ -59,6 +59,8 @@ let package = Package(
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
         .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "GULLogger", package: "GoogleUtilities"),
+        .product(name: "GULEnvironment", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
         .product(
           name: "GoogleAdsOnDeviceConversion", package: "google-ads-on-device-conversion-ios-sdk"
@@ -83,6 +85,8 @@ let package = Package(
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
         .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "GULLogger", package: "GoogleUtilities"),
+        .product(name: "GULEnvironment", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
       path: "GoogleAppMeasurementCoreWrapper",
@@ -108,6 +112,8 @@ let package = Package(
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
         .product(name: "GULNetwork", package: "GoogleUtilities"),
+        .product(name: "GULLogger", package: "GoogleUtilities"),
+        .product(name: "GULEnvironment", package: "GoogleUtilities"),
         .product(name: "nanopb", package: "nanopb"),
       ],
       path: "GoogleAppMeasurementIdentitySupportWrapper",
