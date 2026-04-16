@@ -39,7 +39,7 @@ let package = Package(
     .package(url: "https://github.com/firebase/nanopb.git", "2.30910.0" ..< "2.30911.0"),
     .package(
       url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
-      "3.4.1" ..< "3.5.0"
+      "3.5.0" ..< "3.6.0"
     ),
   ],
   targets: [
