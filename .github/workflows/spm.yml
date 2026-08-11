@@ -1,5 +1,8 @@
 name: spm
 
+permissions:
+  contents: read
+
 on:
   pull_request:
   schedule:
@@ -14,10 +17,8 @@ jobs:
     - name: Initialize xcodebuild
       run: xcodebuild -list
     - name: Verify iOS build
-      run:  xcodebuild -sdk 'iphonesimulator' -destination 'platform=iOS Simulator,name=iPhone 11' -scheme GoogleAppMeasurement
+      run:  xcodebuild -destination 'generic/platform=iOS' -scheme GoogleAppMeasurement-Package
     - name: Verify tvOS build
-      run:  xcodebuild -sdk 'appletvsimulator' -destination 'platform=tvOS Simulator,name=Apple TV' -scheme GoogleAppMeasurement
+      run:  xcodebuild -destination 'generic/platform=tvOS' -scheme GoogleAppMeasurement-Package
     - name: Verify macOS build
-      run:  xcodebuild -sdk 'macosx' -destination 'platform=macOS' -scheme GoogleAppMeasurement
-    - name: Verify GoogleAppMeasurementOnDeviceConversion iOS build
-      run:  xcodebuild -sdk 'iphonesimulator' -destination 'platform=iOS Simulator,name=iPhone 11' -scheme GoogleAppMeasurementOnDeviceConversion
+      run:  xcodebuild -destination 'generic/platform=macOS' -scheme GoogleAppMeasurement-Package
