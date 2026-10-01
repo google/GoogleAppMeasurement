@@ -126,13 +126,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.0/GoogleAppMeasurement.zip",
-      checksum: "be3fd0b7212f98ccf903f9d5597ba0b3823496dfd92e8fbfdd8776424b039809"
+      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.1/GoogleAppMeasurement.zip",
+      checksum: "0b114252276729a5ac2d169e95935c08a79764d0f533863857633b70fb42a922"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.0/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "88121e91d79ee8221b1aa49abae347adf1e595b4d25d441bb8994581f5338fa3"
+      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.1/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "72f4528d5a52383f8addd351f451f4de21196d4b547c1da109800b380d05b2c3"
     ),
   ],
   cLanguageStandard: .c99,
