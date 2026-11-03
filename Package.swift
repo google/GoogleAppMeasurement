@@ -39,7 +39,7 @@ let package = Package(
     .package(url: "https://github.com/firebase/nanopb.git", "2.30910.0" ..< "2.30911.0"),
     .package(
       url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
-      "3.7.0" ..< "3.8.0"
+      "3.8.0" ..< "3.9.0"
     ),
   ],
   targets: [
@@ -126,13 +126,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.1/GoogleAppMeasurement.zip",
-      checksum: "0b114252276729a5ac2d169e95935c08a79764d0f533863857633b70fb42a922"
+      url: "https://dl.google.com/firebase/ios/swiftpm/13.2.0/GoogleAppMeasurement.zip",
+      checksum: "630f8c4d85267dfaf43f4debd7f92b1bce3998568648bf1177b99dd2c78a01a3"
     ),
     .binaryTarget(
       name: "GoogleAppMeasurementIdentitySupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/13.0.1/GoogleAppMeasurementIdentitySupport.zip",
-      checksum: "72f4528d5a52383f8addd351f451f4de21196d4b547c1da109800b380d05b2c3"
+      url: "https://dl.google.com/firebase/ios/swiftpm/13.2.0/GoogleAppMeasurementIdentitySupport.zip",
+      checksum: "97944e6b3903a18d85ac732ce868ad1b0ec1d335930fd2468124093ec0170be8"
     ),
   ],
   cLanguageStandard: .c99,
